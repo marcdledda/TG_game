@@ -184,7 +184,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Starting Dexterity Test...
+  m_Text: 
 --- !u!222 &95649545
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -813,6 +813,7 @@ GameObject:
   - component: {fileID: 594407405}
   - component: {fileID: 594407404}
   - component: {fileID: 594407403}
+  - component: {fileID: 594407407}
   m_Layer: 0
   m_Name: wallWindowOpp
   m_TagString: Untagged
@@ -888,6 +889,17 @@ Transform:
   m_Father: {fileID: 1273036945}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &594407407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 594407402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2caccd9937ee0e9409ba42ed5bfa33c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &672605829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,6 +1046,7 @@ GameObject:
   - component: {fileID: 690134300}
   - component: {fileID: 690134299}
   - component: {fileID: 690134298}
+  - component: {fileID: 690134302}
   m_Layer: 0
   m_Name: Pillar
   m_TagString: Untagged
@@ -1108,6 +1121,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &690134302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 690134297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20aff65eaa8120d4cb951f853de08803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.5
 --- !u!1 &887880447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1320,6 +1345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ee1cd1cebfe7943907ff56b2e4db79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wallText: {fileID: 95649544}
 --- !u!1 &998552332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1917,6 +1943,7 @@ GameObject:
   - component: {fileID: 1452431526}
   - component: {fileID: 1452431525}
   - component: {fileID: 1452431524}
+  - component: {fileID: 1452431528}
   m_Layer: 0
   m_Name: roomDivide
   m_TagString: Untagged
@@ -1992,6 +2019,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1452431528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1452431523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 015d0e61b64186c4dbe4ab095a4c4351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.5
 --- !u!1 &1468887113
 GameObject:
   m_ObjectHideFlags: 0

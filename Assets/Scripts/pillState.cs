@@ -16,11 +16,9 @@ public class pillState : MonoBehaviour {
 	private bool rightIndex;
 	private bool rightMiddle;
 	private Vector3 originalPos;
-	private bool grabbing;
 
 	// Use this for initialization
 	void Start () {
-		grabbing = false;
 		originalPos = new Vector3(0f, 1.348f, 0.486f);
 	}
 	
