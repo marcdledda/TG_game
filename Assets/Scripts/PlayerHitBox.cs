@@ -19,11 +19,15 @@ public class PlayerHitBox : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		if(other.gameObject.name == "dodgePill"){
+		if(other.gameObject.tag == "dodgePill"){
 			Destroy(other.gameObject);
 			wallText.text = "Starting Dexterity Test...";
 			GameState.dexStart = true;
 			GameState.countStart = true;
+			movePillar.pillSpawn = false;
+		}
+		if(other.gameObject.tag == "dodgeBall"){
+			GameState.dodgeScore--;
 		}
 	}
 }

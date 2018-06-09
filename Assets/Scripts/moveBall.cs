@@ -30,7 +30,11 @@ public class moveBall : MonoBehaviour {
 		// 	Destroy(gameObject);
 		// }
 
-		if (transform.position.x > 1.7f || transform.position.y > 2.8f || transform.position.y < -0.3f || transform.position.z > 2.2f || transform.position.z < -2.2f) {
+		if (transform.position.x > 1.1f || transform.position.y > 2.8f || transform.position.y < -0.3f || transform.position.z > 2.2f || transform.position.z < -2.2f) {
+			if (GameState.dodgeAmount == 0){
+				moveDivider.moveBack = true;
+				movePillar.moveBack = true;
+			}
 			Destroy(gameObject);
 		}
 	}

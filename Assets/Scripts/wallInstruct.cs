@@ -12,7 +12,7 @@ public class wallInstruct : MonoBehaviour {
 	public static bool showInstruct;
 	public static bool countStart;
 	private float countdown = 3f;
-	public bool textShown;
+	public static bool textShown;
 
 	// Use this for initialization
 	void Start () {
@@ -27,7 +27,7 @@ public class wallInstruct : MonoBehaviour {
 			startTimer();
 		}
 		
-		if (!textShown){
+		if (!textShown && GameState.dexStart){
 			if (countdown < 2.64f){
 				tutText.text = "DODGE";
 			}
@@ -38,6 +38,8 @@ public class wallInstruct : MonoBehaviour {
 				tutText.text = "DODGE THE SPHERES";
 				startSpawn();
 			}
+		} else if (!textShown){
+			tutText.text = "";
 		}
 	}
 
@@ -46,6 +48,7 @@ public class wallInstruct : MonoBehaviour {
 			countdown -= Time.deltaTime;
 		} else {
 			countStart = false;
+			countdown = 3f;
 		}
 	}
 

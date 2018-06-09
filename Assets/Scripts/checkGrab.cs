@@ -17,7 +17,7 @@ public class checkGrab : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		itemCollide = other.gameObject.name;
+		itemCollide = other.gameObject.tag;
 	}
 
 	void OnTriggerExit(Collider other){

@@ -5,20 +5,22 @@ using UnityEngine;
 public class dodgeSpawn : MonoBehaviour {
 
 	[SerializeField]
-	private int dodgeAmount;
-	[SerializeField]
 	private GameObject ballPrefab;
-
+	private bool afterCancel = false;
 
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating("spawnBall", 0.5f, 2f);
+		InvokeRepeating("spawnBall", 0.5f, 1f);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (dodgeAmount == 0){
+		if (GameState.dodgeAmount == 0){
             CancelInvoke();
+			afterCancel = true;
+		}
+		if (afterCancel){
+			Destroy(gameObject);
 		}
 	}
 
@@ -29,6 +31,6 @@ public class dodgeSpawn : MonoBehaviour {
 		Vector3 objectPos = new Vector3(positionX, positionY, positionZ);
 
 		Instantiate(ballPrefab, objectPos, Quaternion.identity);
-		dodgeAmount--;
+		GameState.dodgeAmount--;
 	}
 }

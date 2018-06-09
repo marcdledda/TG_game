@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour {
 
+	public static string dodgeGrade;
+	public static float dodgeScore;
+	public static int dodgeAmount;
 	public static bool dexStart;
+
+
 	public static bool countStart;
 	private float countdown = 3f;
 
@@ -12,6 +17,8 @@ public class GameState : MonoBehaviour {
 	void Start () {
 		dexStart = false;
 		countStart = false;
+		dodgeScore = 20f;
+		dodgeAmount = 20;
 	}
 	
 	// Update is called once per frame
@@ -20,12 +27,19 @@ public class GameState : MonoBehaviour {
 			startTimer();
 		}
 
-		bool pressA = OVRInput.GetUp(OVRInput.Button.One);
-		if (pressA){
-			Debug.Log(dexStart);
-			Debug.Log(countStart);
-			Debug.Log(moveDivider.move);
+		if (dodgeScore / 20f < 0.21f){
+			dodgeGrade = "F";
+		} else if (dodgeScore / 20f < 0.41f){
+			dodgeGrade = "D";
+		} else if (dodgeScore / 20f < 0.61f){
+			dodgeGrade = "C";
+		} else if (dodgeScore / 20f < 0.81f){
+			dodgeGrade = "B";
+		} else if (dodgeScore / 20f > 0.81f){
+			dodgeGrade = "A";
 		}
+
+
 	}
 
 	private void startTimer(){
@@ -35,6 +49,7 @@ public class GameState : MonoBehaviour {
 			moveDivider.move = true;
 			movePillar.move = true;
 			countStart = false;
+			countdown = 3f;
 		}
 	}
 }
