@@ -901,6 +901,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutText: {fileID: 887880449}
+  spawnObj: {fileID: 1950356473376254, guid: 7c5961c7884315e4b99ff5fa1dd55967, type: 2}
+  textShown: 0
 --- !u!1 &672605829
 GameObject:
   m_ObjectHideFlags: 0

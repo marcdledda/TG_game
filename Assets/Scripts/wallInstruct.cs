@@ -7,15 +7,18 @@ public class wallInstruct : MonoBehaviour {
 
 	[SerializeField]
 	private Text tutText;
+	[SerializeField]
+	private GameObject spawnObj;
 	public static bool showInstruct;
 	public static bool countStart;
 	private float countdown = 3f;
-	private bool textShown = false;
+	public bool textShown;
 
 	// Use this for initialization
 	void Start () {
 		showInstruct = false;
 		countStart = false;
+		textShown = false;
 	}
 	
 	// Update is called once per frame
@@ -33,7 +36,7 @@ public class wallInstruct : MonoBehaviour {
 			}
 			if (countdown < 1.92f){
 				tutText.text = "DODGE THE SPHERES";
-				textShown = true;
+				startSpawn();
 			}
 		}
 	}
@@ -43,6 +46,15 @@ public class wallInstruct : MonoBehaviour {
 			countdown -= Time.deltaTime;
 		} else {
 			countStart = false;
+		}
+	}
+
+	private void startSpawn(){
+		if (!textShown) {
+			textShown = true;
+			Vector3 objectPos = new Vector3(0f, 0f, 0f);
+
+			Instantiate(spawnObj, objectPos, Quaternion.identity);
 		}
 	}
 }
