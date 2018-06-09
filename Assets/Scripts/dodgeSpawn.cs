@@ -10,7 +10,7 @@ public class dodgeSpawn : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating("spawnBall", 0.5f, 1f);
+		InvokeRepeating("spawnBall", 0.5f, 0.5f);
 	}
 	
 	// Update is called once per frame

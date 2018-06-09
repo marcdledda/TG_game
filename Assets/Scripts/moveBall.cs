@@ -10,6 +10,7 @@ public class moveBall : MonoBehaviour {
 	private Rigidbody ball;
 	private bool fullGrow = false;
 	private Vector3 playerPos;
+	private int growTick;
 
 	// Use this for initialization
 	void Start () {
@@ -19,8 +20,10 @@ public class moveBall : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!fullGrow){
-			transform.localScale = new Vector3(0.22f, 0.22f, 0.22f);
-			fullGrow = true;
+			transform.localScale += new Vector3(0.3f, 0.3f, 0.3f);
+			if (transform.localScale.x == 0.22) {
+				fullGrow = true;
+			}
 		} else if (fullGrow){
 			Vector3 towardPos = playerPos - transform.position;
 			ball.AddForce(speed*towardPos);
