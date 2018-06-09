@@ -23,6 +23,7 @@ public class PlayerHitBox : MonoBehaviour {
 			Destroy(other.gameObject);
 			wallText.text = "Starting Dexterity Test...";
 			GameState.dexStart = true;
+			GameState.countStart = true;
 		}
 	}
 }

@@ -19,7 +19,7 @@ public class movePillar : MonoBehaviour {
 	void Update () {
 		if (move){
 			transform.Translate(Vector3.down * Time.deltaTime * speed);
-			if (transform.position.y == -1.2f){
+			if (transform.position.y < -1.2f){
 				move = false;
 			}
 		}

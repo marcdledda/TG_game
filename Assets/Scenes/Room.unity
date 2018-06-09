@@ -900,6 +900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2caccd9937ee0e9409ba42ed5bfa33c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutText: {fileID: 887880449}
 --- !u!1 &672605829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,7 +1201,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: DODGE THE SPHERE
+  m_Text: 
 --- !u!222 &887880450
 CanvasRenderer:
   m_ObjectHideFlags: 0

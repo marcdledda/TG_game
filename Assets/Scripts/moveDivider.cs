@@ -19,8 +19,10 @@ public class moveDivider : MonoBehaviour {
 	void Update () {
 		if (move){
 			transform.Translate(Vector3.up * Time.deltaTime * speed);
-			if(transform.position.y == 4.36f){
+			if(transform.position.y > 4.22f){
 				move = false;
+				wallInstruct.showInstruct = true;
+				wallInstruct.countStart = true;
 			}
 		}
 	}
