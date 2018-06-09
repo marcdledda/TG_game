@@ -38,6 +38,7 @@ public class moveDivider : MonoBehaviour {
 				wallInstruct.countStart = false;
 				wallInstruct.textShown = false;
 				GameState.dexStart = false;
+				GameState.dodgeScore = 20f;
 				GameState.dodgeAmount = 20;
 			}
 		}

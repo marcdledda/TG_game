@@ -21,7 +21,7 @@ public class moveBall : MonoBehaviour {
 	void Update () {
 		if (!fullGrow){
 			transform.localScale += new Vector3(0.3f, 0.3f, 0.3f);
-			if (transform.localScale.x == 0.22) {
+			if (transform.localScale.x > 0.21) {
 				fullGrow = true;
 			}
 		} else if (fullGrow){
