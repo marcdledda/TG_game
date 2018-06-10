@@ -10,6 +10,8 @@ public class rightGun : MonoBehaviour {
 	private Transform muzzlePos;
 	[SerializeField]
 	private GameObject sparkPrefab;
+	[SerializeField]
+	private GameObject impactPrefab;
 
 	// Use this for initialization
 	void Start () {
@@ -29,8 +31,14 @@ public class rightGun : MonoBehaviour {
 
 	void shoot(){
 		muzzleFlash.Play();
-		Vector3 sparkPos = muzzlePos.position;
-		GameObject sparkCreate = Instantiate(sparkPrefab, sparkPos, Quaternion.Euler(new Vector3(0f, -90f, 0f)));
-		Destroy(sparkCreate, 3f);
+
+		RaycastHit hit;
+		if (Physics.Raycast(transform.position, transform.forward, out hit)){
+			GameObject impactCreate = Instantiate(impactPrefab, hit.point, Quaternion.LookRotation(hit.normal));
+			Destroy(impactCreate, 2.5f);
+		}
+		// Vector3 sparkPos = muzzlePos.position;
+		// GameObject sparkCreate = Instantiate(sparkPrefab, sparkPos, Quaternion.Euler(new Vector3(0f, -90f, 0f)));
+		// Destroy(sparkCreate, 3f);
 	}
 }

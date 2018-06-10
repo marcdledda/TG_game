@@ -777,6 +777,8 @@ MonoBehaviour:
   muzzlePos: {fileID: 1164519884}
   sparkPrefab: {fileID: 1016049072575000, guid: 95f0b09ad5cf8d5419f898aa6a67a6ef,
     type: 2}
+  impactPrefab: {fileID: 1192566312672498, guid: 4cd6ea974e006f846bb540ae068ee0e8,
+    type: 2}
 --- !u!1 &594407402
 GameObject:
   m_ObjectHideFlags: 0
@@ -2220,6 +2222,8 @@ MonoBehaviour:
   muzzleFlash: {fileID: 559042639}
   muzzlePos: {fileID: 559042637}
   sparkPrefab: {fileID: 1016049072575000, guid: 95f0b09ad5cf8d5419f898aa6a67a6ef,
+    type: 2}
+  impactPrefab: {fileID: 1192566312672498, guid: 4cd6ea974e006f846bb540ae068ee0e8,
     type: 2}
 --- !u!1 &1858919706
 GameObject:
