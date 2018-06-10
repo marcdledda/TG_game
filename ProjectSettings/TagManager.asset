@@ -8,6 +8,10 @@ TagManager:
   - RHand
   - dodgeBall
   - dodgePill
+  - Fire
+  - gunPill
+  - dummy
+  - dummyStart
   layers:
   - Default
   - TransparentFX

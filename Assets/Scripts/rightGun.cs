@@ -36,6 +36,12 @@ public class rightGun : MonoBehaviour {
 		if (Physics.Raycast(transform.position, transform.forward, out hit)){
 			GameObject impactCreate = Instantiate(impactPrefab, hit.point, Quaternion.LookRotation(hit.normal));
 			Destroy(impactCreate, 2.5f);
+			if (hit.transform.tag == "dummyStart"){
+				Debug.Log("HIT DUMMY START");
+			}
+			if (hit.transform.tag == "dummy"){
+				Debug.Log("HIT DUMMY");
+			}
 		}
 		// Vector3 sparkPos = muzzlePos.position;
 		// GameObject sparkCreate = Instantiate(sparkPrefab, sparkPos, Quaternion.Euler(new Vector3(0f, -90f, 0f)));

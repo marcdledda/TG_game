@@ -7,6 +7,8 @@ public class PlayerHitBox : MonoBehaviour {
 
 	[SerializeField]
 	private Text wallText;
+	[SerializeField]
+	private GameObject dummyStart;
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +30,11 @@ public class PlayerHitBox : MonoBehaviour {
 		}
 		if(other.gameObject.tag == "dodgeBall"){
 			GameState.dodgeScore--;
+		}
+		if(other.gameObject.tag == "gunPill"){
+			Destroy(other.gameObject);
+			wallText.text = "Finger Guns Enabled" + "\r\nShoot the Target to start...";
+			Instantiate(dummyStart, new Vector3(-1.2f, 0f, 1.3f), Quaternion.identity);
 		}
 	}
 }

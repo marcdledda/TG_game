@@ -30,7 +30,7 @@ public class moveDivider : MonoBehaviour {
 		}
 
 		if (moveBack) {
-			wallText.text = "Test Complete" + "\r\nDodged: " + GameState.dodgeScore + "/20" + "\r\nGrade: " + GameState.dodgeGrade;
+			wallText.text = "Eat the Nex Pill" + "\r\nto Continue";
 			transform.Translate(Vector3.down * Time.deltaTime * speed);
 			if(transform.position.y < 1.21f){
 				moveBack = false;
