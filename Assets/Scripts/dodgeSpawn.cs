@@ -10,7 +10,7 @@ public class dodgeSpawn : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating("spawnBall", 0.5f, 0.75f);
+		InvokeRepeating("spawnBall", 0.5f, 1f);
 	}
 	
 	// Update is called once per frame
@@ -25,7 +25,7 @@ public class dodgeSpawn : MonoBehaviour {
 	}
 
 	private void spawnBall(){
-		float positionX = Random.Range(-3.7f, -2.2f);
+		float positionX = Random.Range(-3.7f, -3f);
 		float positionZ = Random.Range(-1.6f, 1.6f);
 		float positionY = Random.Range(0.27f, 2f);
 		Vector3 objectPos = new Vector3(positionX, positionY, positionZ);

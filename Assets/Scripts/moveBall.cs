@@ -29,10 +29,6 @@ public class moveBall : MonoBehaviour {
 			ball.AddForce(speed*towardPos);
 		}
 
-		// if (transform.position.x > 1.7f || transform.position.y > 2.8f || transform.position.y > -0.4){
-		// 	Destroy(gameObject);
-		// }
-
 		if (transform.position.x > 1.1f || transform.position.y > 2.8f || transform.position.y < -0.3f || transform.position.z > 2.2f || transform.position.z < -2.2f) {
 			if (GameState.dodgeAmount == 0){
 				moveDivider.moveBack = true;
