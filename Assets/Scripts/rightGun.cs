@@ -21,11 +21,14 @@ public class rightGun : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		bool rightIndex = OVRInput.Get(OVRInput.NearTouch.SecondaryIndexTrigger);
-		bool rightThumb = OVRInput.GetDown(OVRInput.Touch.SecondaryThumbRest);
-		bool rightMiddle = OVRInput.Get(OVRInput.Button.SecondaryHandTrigger);
+		bool rightIndex = OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger);
+		// bool rightThumb = OVRInput.GetDown(OVRInput.Touch.SecondaryThumbRest);
+		// bool rightMiddle = OVRInput.Get(OVRInput.Button.SecondaryHandTrigger);
 		
-		if (!rightIndex && rightThumb && rightMiddle && rightEnable){
+		// if (!rightIndex && rightThumb && rightMiddle && rightEnable){
+		// 	shoot();
+		// }
+		if (rightIndex && rightEnable){
 			shoot();
 		}
 	}

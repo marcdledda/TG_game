@@ -10,7 +10,8 @@ public class moveDivider : MonoBehaviour {
 	[SerializeField]
 	private Text wallText;
 	public static bool move;
-	public static bool moveBack;	
+	public static bool moveBack;
+	public static bool moveBackRestart;	
 
 	// Use this for initialization
 	void Start () {
@@ -48,7 +49,7 @@ public class moveDivider : MonoBehaviour {
 		}
 
 		if (moveBack && GameState.dexStart) {
-			wallText.text = "Dodged: " + GameState.dodgeScore + "/20" + "\r\nEat The Next Pill";
+			wallText.text = "Dodged: " + GameState.dodgeScore + "/15" + "\r\nEat The Next Pill";
 			transform.Translate(Vector3.down * Time.deltaTime * speed);
 			if(transform.position.y < 1.21f){
 				moveBack = false;
@@ -56,13 +57,13 @@ public class moveDivider : MonoBehaviour {
 				wallInstruct.countStart = false;
 				wallInstruct.textShown = false;
 				GameState.dexStart = false;
-				GameState.dodgeScore = 20f;
-				GameState.dodgeAmount = 20;
+				GameState.dodgeScore = 15f;
+				GameState.dodgeAmount = 15;
 			}
 		}
 
 		if (moveBack && GameState.gunStart){
-			wallText.text = "Shot: " + GameState.gunScore + "/20" + "\r\nNow Do It In Unison";
+			wallText.text = "Shot: " + GameState.gunScore + "/15" + "\r\nNow Do It In Unison";
 			transform.Translate(Vector3.down * Time.deltaTime * speed);
 			if(transform.position.y < 1.21f){
 				moveBack = false;
@@ -71,27 +72,34 @@ public class moveDivider : MonoBehaviour {
 				wallInstruct.textShown = false;
 				GameState.gunStart = false;
 				GameState.gunScore = 0;
-				GameState.dummyAmount = 20;
+				GameState.dummyAmount = 15;
 				GameState.spawnLast = false;
 			}
 		}
 
 		if (moveBack && GameState.uniStart){
-			wallText.text = "Shot: " + GameState.gunScore + "/20" + "\r\nDodged: " + GameState.dodgeScore + "/20" + "\r\nComposite Score: " + GameState.dodgeGrade;
+			wallText.text = "Shot: " + GameState.gunScore + "/15" + "\r\nDodged: " + GameState.dodgeScore + "/15" + "\r\nComposite Score: " + GameState.dodgeGrade;
 			transform.Translate(Vector3.down * Time.deltaTime * speed);
 			if(transform.position.y < 1.21f){
 				moveBack = false;
 				wallInstruct.showInstruct = false;
 				wallInstruct.countStart = false;
 				wallInstruct.textShown = false;
+				GameState.uniStart = false;
 				GameState.dexStart = false;
-				GameState.dodgeScore = 20f;
-				GameState.dodgeAmount = 20;
+				GameState.dodgeScore = 15f;
+				GameState.dodgeAmount = 15;
 				GameState.gunStart = false;
 				GameState.gunScore = 0;
-				GameState.dummyAmount = 20;
+				GameState.dummyAmount = 15;
 				GameState.spawnLast = false;
+				GameState.restartBTN = true;
 			}
+		}
+
+		if (moveBackRestart){
+			wallText.text = "Eat the Pill" + "\r\nto Start the Test";
+			moveBackRestart = false;
 		}
 	}
 }
