@@ -13,11 +13,11 @@ public class checkGrab : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
 	void OnTriggerEnter(Collider other){
-		itemCollide = other.gameObject.name;
+		itemCollide = other.gameObject.tag;
 	}
 
 	void OnTriggerExit(Collider other){

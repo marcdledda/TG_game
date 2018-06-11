@@ -6,6 +6,13 @@ TagManager:
   tags:
   - LHand
   - RHand
+  - dodgeBall
+  - dodgePill
+  - Fire
+  - gunPill
+  - dummy
+  - dummyStart
+  - uniPill
   layers:
   - Default
   - TransparentFX
