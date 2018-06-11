@@ -21,11 +21,14 @@ public class leftGun : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		bool leftIndex = OVRInput.Get(OVRInput.NearTouch.PrimaryIndexTrigger);
-		bool leftThumb = OVRInput.GetDown(OVRInput.Touch.PrimaryThumbRest);
-		bool leftMiddle = OVRInput.Get(OVRInput.Button.PrimaryHandTrigger);
+		bool leftIndex = OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger);
+		// bool leftThumb = OVRInput.GetDown(OVRInput.Touch.PrimaryThumbRest);
+		// bool leftMiddle = OVRInput.Get(OVRInput.Button.PrimaryHandTrigger);
 		
-		if (!leftIndex && leftThumb && leftMiddle && leftEnable){
+		// if (!leftIndex && leftThumb && leftMiddle && leftEnable){
+		// 	shoot();
+		// }
+		if (leftIndex && leftEnable){
 			shoot();
 		}
 	}
