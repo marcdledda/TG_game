@@ -12,10 +12,11 @@ public class rightGun : MonoBehaviour {
 	private GameObject sparkPrefab;
 	[SerializeField]
 	private GameObject impactPrefab;
+	public static bool rightEnable;
 
 	// Use this for initialization
 	void Start () {
-		
+		rightEnable = false;
 	}
 	
 	// Update is called once per frame
@@ -24,7 +25,7 @@ public class rightGun : MonoBehaviour {
 		bool rightThumb = OVRInput.GetDown(OVRInput.Touch.SecondaryThumbRest);
 		bool rightMiddle = OVRInput.Get(OVRInput.Button.SecondaryHandTrigger);
 		
-		if (!rightIndex && rightThumb && rightMiddle){
+		if (!rightIndex && rightThumb && rightMiddle && rightEnable){
 			shoot();
 		}
 	}
@@ -36,11 +37,13 @@ public class rightGun : MonoBehaviour {
 		if (Physics.Raycast(transform.position, transform.forward, out hit)){
 			GameObject impactCreate = Instantiate(impactPrefab, hit.point, Quaternion.LookRotation(hit.normal));
 			Destroy(impactCreate, 2.5f);
+			
 			if (hit.transform.tag == "dummyStart"){
-				Debug.Log("HIT DUMMY START");
+				Destroy(hit.transform.gameObject);
 			}
 			if (hit.transform.tag == "dummy"){
-				Debug.Log("HIT DUMMY");
+				Destroy(hit.transform.gameObject);
+				GameState.gunScore++;
 			}
 		}
 		// Vector3 sparkPos = muzzlePos.position;

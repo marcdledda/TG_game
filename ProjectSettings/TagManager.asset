@@ -12,6 +12,7 @@ TagManager:
   - gunPill
   - dummy
   - dummyStart
+  - uniPill
   layers:
   - Default
   - TransparentFX

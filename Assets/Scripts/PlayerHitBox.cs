@@ -34,7 +34,16 @@ public class PlayerHitBox : MonoBehaviour {
 		if(other.gameObject.tag == "gunPill"){
 			Destroy(other.gameObject);
 			wallText.text = "Finger Guns Enabled" + "\r\nShoot the Target to start...";
-			Instantiate(dummyStart, new Vector3(-1.2f, 0f, 1.3f), Quaternion.identity);
+			leftGun.leftEnable = true;
+			rightGun.rightEnable = true;
+			Instantiate(dummyStart, new Vector3(-1.2f, 0f, 1.3f), Quaternion.Euler(new Vector3(-90f, 0f, 90f)));
+		}
+		if(other.gameObject.tag == "uniPill"){
+			Destroy(other.gameObject);
+			wallText.text = "Starting" + "\r\nDexterity & Reflex Test";
+			GameState.uniStart = true;
+			GameState.countStart = true;
+			movePillar.pillSpawn = false;
 		}
 	}
 }

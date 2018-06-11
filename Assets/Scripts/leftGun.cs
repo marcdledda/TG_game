@@ -12,10 +12,11 @@ public class leftGun : MonoBehaviour {
 	private GameObject sparkPrefab;
 	[SerializeField]
 	private GameObject impactPrefab;
+	public static bool leftEnable;
 
 	// Use this for initialization
 	void Start () {
-		
+		leftEnable = false;
 	}
 	
 	// Update is called once per frame
@@ -24,7 +25,7 @@ public class leftGun : MonoBehaviour {
 		bool leftThumb = OVRInput.GetDown(OVRInput.Touch.PrimaryThumbRest);
 		bool leftMiddle = OVRInput.Get(OVRInput.Button.PrimaryHandTrigger);
 		
-		if (!leftIndex && leftThumb && leftMiddle){
+		if (!leftIndex && leftThumb && leftMiddle && leftEnable){
 			shoot();
 		}
 	}
@@ -38,10 +39,11 @@ public class leftGun : MonoBehaviour {
 			Destroy(impactCreate, 2.5f);
 			
 			if (hit.transform.tag == "dummyStart"){
-				Debug.Log("HIT DUMMY START");
+				Destroy(hit.transform.gameObject);
 			}
 			if (hit.transform.tag == "dummy"){
-				Debug.Log("HIT DUMMY");
+				Destroy(hit.transform.gameObject);
+				GameState.gunScore++;
 			}			
 		}
 		// Vector3 sparkPos = muzzlePos.position;

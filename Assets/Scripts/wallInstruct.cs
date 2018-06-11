@@ -9,6 +9,8 @@ public class wallInstruct : MonoBehaviour {
 	private Text tutText;
 	[SerializeField]
 	private GameObject spawnObj;
+	[SerializeField]
+	private GameObject spawnGunObj;
 	public static bool showInstruct;
 	public static bool countStart;
 	private float countdown = 3f;
@@ -38,6 +40,28 @@ public class wallInstruct : MonoBehaviour {
 				tutText.text = "DODGE THE SPHERES";
 				startSpawn();
 			}
+		} else if (!textShown && GameState.gunStart){
+			if (countdown < 2.64f){
+				tutText.text = "SHOOT";
+			}
+			if (countdown < 2.28f){
+				tutText.text = "SHOOT THE";
+			}
+			if (countdown < 1.92f){
+				tutText.text = "SHOOT THE DUMMIES";
+				startSpawn();
+			}
+		} else if (!textShown && GameState.uniStart) {
+			if (countdown < 2.64f){
+				tutText.text = "DODGE";
+			}
+			if (countdown < 2.28f){
+				tutText.text = "DODGE AND";
+			}
+			if (countdown < 1.92f){
+				tutText.text = "DODGE AND SHOOT";
+				startSpawn();
+			}
 		} else if (!textShown){
 			tutText.text = "";
 		}
@@ -53,11 +77,22 @@ public class wallInstruct : MonoBehaviour {
 	}
 
 	private void startSpawn(){
-		if (!textShown) {
+		if (!textShown && GameState.dexStart) {
 			textShown = true;
 			Vector3 objectPos = new Vector3(0f, 0f, 0f);
-
 			Instantiate(spawnObj, objectPos, Quaternion.identity);
+
+		} else if (!textShown && GameState.gunStart) {
+			textShown = true;
+			Vector3 objectPos = new Vector3(0f, 0f, 0f);
+			Instantiate(spawnGunObj, objectPos, Quaternion.identity);
+
+		} else if (!textShown && GameState.uniStart) {
+			textShown = true;
+			Vector3 objectPos = new Vector3(0f, 0f, 0f);
+			Instantiate(spawnObj, objectPos, Quaternion.identity);
+			Instantiate(spawnGunObj, objectPos, Quaternion.identity);
+			
 		}
 	}
 }

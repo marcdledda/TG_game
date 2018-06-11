@@ -8,14 +8,18 @@ public class movePillar : MonoBehaviour {
 	private float speed;
 	[SerializeField]
 	private GameObject pillPrefab;
+	[SerializeField]
+	private GameObject uniPrefab;
 	public static bool move;
 	public static bool moveBack;
 	public static bool pillSpawn;
+	public static bool moveBackUni;
 
 	// Use this for initialization
 	void Start () {
 		move = false;
 		moveBack = false;
+		moveBackUni = false;
 	}
 	
 	// Update is called once per frame
@@ -34,6 +38,18 @@ public class movePillar : MonoBehaviour {
 				if (!pillSpawn){
 					Vector3 objectPos = new Vector3(0f, 1.348f, 0.486f);
 					Instantiate(pillPrefab, objectPos, Quaternion.identity);
+					pillSpawn = true;
+				}
+			}
+		}
+
+		if (moveBackUni){
+			transform.Translate(Vector3.up * Time.deltaTime * speed);
+			if (transform.position.y > -0.1f){
+				moveBackUni = false;
+				if (!pillSpawn){
+					Vector3 objectPos = new Vector3(0f, 1.348f, 0.486f);
+					Instantiate(uniPrefab, objectPos, Quaternion.identity);
 					pillSpawn = true;
 				}
 			}

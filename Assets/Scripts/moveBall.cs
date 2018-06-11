@@ -30,9 +30,15 @@ public class moveBall : MonoBehaviour {
 		}
 
 		if (transform.position.x > 1.1f || transform.position.y > 2.8f || transform.position.y < -0.3f || transform.position.z > 2.2f || transform.position.z < -2.2f) {
-			if (GameState.dodgeAmount == 0){
-				moveDivider.moveBack = true;
-				movePillar.moveBack = true;
+			if (GameState.uniStart){
+				if (GameState.dodgeAmount == 0 && GameState.dummyAmount == 0 && GameState.spawnLast){
+					moveDivider.moveBack = true;
+				}
+			} else if (!GameState.uniStart){
+				if (GameState.dodgeAmount == 0){
+					moveDivider.moveBack = true;
+					movePillar.moveBack = true;
+				}
 			}
 			Destroy(gameObject);
 		}

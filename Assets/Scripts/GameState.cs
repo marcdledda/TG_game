@@ -5,10 +5,17 @@ using UnityEngine;
 public class GameState : MonoBehaviour {
 
 	public static string dodgeGrade;
+
 	public static float dodgeScore;
 	public static int dodgeAmount;
 	public static bool dexStart;
 
+	public static bool gunStart;
+	public static int dummyAmount;
+	public static int gunScore;
+	public static bool spawnLast;
+
+	public static bool uniStart;
 
 	public static bool countStart;
 	private float countdown = 3f;
@@ -16,9 +23,13 @@ public class GameState : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		dexStart = false;
+		gunStart = false;
 		countStart = false;
 		dodgeScore = 20f;
 		dodgeAmount = 20;
+		dummyAmount = 20;
+		gunScore = 0;
+		spawnLast = false;
 	}
 	
 	// Update is called once per frame
@@ -27,18 +38,25 @@ public class GameState : MonoBehaviour {
 			startTimer();
 		}
 
-		if (dodgeScore / 20f < 0.21f){
+		if ((dodgeScore + gunScore) / 40f < 0.21f){
 			dodgeGrade = "F";
-		} else if (dodgeScore / 20f < 0.41f){
+		} else if ((dodgeScore + gunScore) / 40f < 0.41f){
 			dodgeGrade = "D";
-		} else if (dodgeScore / 20f < 0.61f){
+		} else if ((dodgeScore + gunScore) / 40f < 0.61f){
 			dodgeGrade = "C";
-		} else if (dodgeScore / 20f < 0.81f){
+		} else if ((dodgeScore + gunScore) / 40f < 0.81f){
 			dodgeGrade = "B";
-		} else if (dodgeScore / 20f > 0.81f){
+		} else if ((dodgeScore + gunScore) / 40f > 0.81f){
 			dodgeGrade = "A";
 		}
 
+		if (gunStart && countStart){
+			startTimer();
+		}
+
+		if (uniStart && countStart){
+			startTimer();
+		}
 
 	}
 
