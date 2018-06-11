@@ -33,7 +33,7 @@ public class uniPillState : MonoBehaviour {
 					pillObject.AddForce(speedForce*towardPos);
 				}
 			}
-		} else if (checkGrab.itemCollide == "dodgePill"){
+		} else if (checkGrab.itemCollide == "uniPill"){
 			if (leftIndex && leftMiddle || rightIndex && rightMiddle){
 				pillText.text = "Dexterity + Reflex";
 			}

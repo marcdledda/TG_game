@@ -36,8 +36,9 @@ public class movePillar : MonoBehaviour {
 			if (transform.position.y > -0.1f){
 				moveBack = false;
 				if (!pillSpawn){
-					Vector3 objectPos = new Vector3(0f, 1.348f, 0.486f);
-					Instantiate(pillPrefab, objectPos, Quaternion.identity);
+					// Vector3 objectPos = new Vector3(0f, 1.348f, 0.486f);
+					// Instantiate(pillPrefab, objectPos, Quaternion.identity);
+					pillPrefab.SetActive(true);
 					pillSpawn = true;
 				}
 			}
@@ -48,8 +49,9 @@ public class movePillar : MonoBehaviour {
 			if (transform.position.y > -0.1f){
 				moveBackUni = false;
 				if (!pillSpawn){
-					Vector3 objectPos = new Vector3(0f, 1.348f, 0.486f);
-					Instantiate(uniPrefab, objectPos, Quaternion.identity);
+					// Vector3 objectPos = new Vector3(0f, 1.348f, 0.486f);
+					// Instantiate(uniPrefab, objectPos, Quaternion.identity);
+					uniPrefab.SetActive(true);
 					pillSpawn = true;
 				}
 			}
