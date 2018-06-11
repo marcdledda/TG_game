@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour {
 
@@ -25,9 +26,9 @@ public class GameState : MonoBehaviour {
 		dexStart = false;
 		gunStart = false;
 		countStart = false;
-		dodgeScore = 20f;
-		dodgeAmount = 20;
-		dummyAmount = 20;
+		dodgeScore = 15f;
+		dodgeAmount = 15;
+		dummyAmount = 15;
 		gunScore = 0;
 		spawnLast = false;
 	}
@@ -38,15 +39,15 @@ public class GameState : MonoBehaviour {
 			startTimer();
 		}
 
-		if ((dodgeScore + gunScore) / 40f < 0.21f){
+		if ((dodgeScore + gunScore) / 30f < 0.21f){
 			dodgeGrade = "F";
-		} else if ((dodgeScore + gunScore) / 40f < 0.41f){
+		} else if ((dodgeScore + gunScore) / 30f < 0.41f){
 			dodgeGrade = "D";
-		} else if ((dodgeScore + gunScore) / 40f < 0.61f){
+		} else if ((dodgeScore + gunScore) / 30f < 0.61f){
 			dodgeGrade = "C";
-		} else if ((dodgeScore + gunScore) / 40f < 0.81f){
+		} else if ((dodgeScore + gunScore) / 30f < 0.81f){
 			dodgeGrade = "B";
-		} else if ((dodgeScore + gunScore) / 40f > 0.81f){
+		} else if ((dodgeScore + gunScore) / 30f > 0.81f){
 			dodgeGrade = "A";
 		}
 
@@ -56,6 +57,10 @@ public class GameState : MonoBehaviour {
 
 		if (uniStart && countStart){
 			startTimer();
+		}
+
+		if(Input.GetKeyDown(KeyCode.Space)){
+			restart();
 		}
 
 	}
@@ -69,5 +74,13 @@ public class GameState : MonoBehaviour {
 			countStart = false;
 			countdown = 3f;
 		}
+	}
+
+	private void restart(){
+		// SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		movePillar.moveBackRestart = true;
+		moveDivider.moveBackRestart = true;
+		leftGun.leftEnable = false;
+		rightGun.rightEnable = false;
 	}
 }

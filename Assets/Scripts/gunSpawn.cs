@@ -18,10 +18,10 @@ public class gunSpawn : MonoBehaviour {
 		if (GameState.dummyAmount == 0){
             CancelInvoke();
 			afterCancel = true;
+			GameState.spawnLast = true;
 		}
 		if (afterCancel){
 			Destroy(gameObject);
-			GameState.spawnLast = true;
 		}
 	}
 

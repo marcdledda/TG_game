@@ -17,10 +17,14 @@ public class checkGrab : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		itemCollide = other.gameObject.tag;
+		if (other != null){
+			itemCollide = other.gameObject.tag;
+		}
 	}
 
 	void OnTriggerExit(Collider other){
-		itemCollide = "blank";
+		if (other != null){
+			itemCollide = "blank";
+		}
 	}
 }

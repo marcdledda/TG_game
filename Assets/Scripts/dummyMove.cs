@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class dummyMove : MonoBehaviour {
 
+	private bool spawnLast;
+
 	// Use this for initialization
 	void Start () {
-		
+		if (GameState.dummyAmount == 0){
+			spawnLast = true;
+		} else {
+			spawnLast = false;
+		}
 	}
 	
 	// Update is called once per frame
@@ -20,11 +26,11 @@ public class dummyMove : MonoBehaviour {
 
 	void OnDestroy(){
 		if (GameState.uniStart) {
-			if (GameState.dodgeAmount == 0 && GameState.dummyAmount == 0 && GameState.spawnLast){
+			if (GameState.dodgeAmount == 0 && GameState.dummyAmount == 0 && spawnLast){
 				moveDivider.moveBack = true;
 			}
 		} else if (!GameState.uniStart){
-			if (GameState.dummyAmount == 0 && GameState.spawnLast){
+			if (GameState.dummyAmount == 0 && spawnLast){
 				moveDivider.moveBack = true;
 				movePillar.moveBackUni = true;
 			}
