@@ -93,6 +93,7 @@ public class moveDivider : MonoBehaviour {
 				GameState.gunScore = 0;
 				GameState.dummyAmount = 15;
 				GameState.spawnLast = false;
+				GameState.restartBTN = true;
 			}
 		}
 

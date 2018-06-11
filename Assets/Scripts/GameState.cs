@@ -17,6 +17,7 @@ public class GameState : MonoBehaviour {
 	public static bool spawnLast;
 
 	public static bool uniStart;
+	public static bool restartBTN;
 
 	public static bool countStart;
 	private float countdown = 3f;
@@ -31,6 +32,7 @@ public class GameState : MonoBehaviour {
 		dummyAmount = 15;
 		gunScore = 0;
 		spawnLast = false;
+		restartBTN = false;
 	}
 	
 	// Update is called once per frame
@@ -60,7 +62,9 @@ public class GameState : MonoBehaviour {
 		}
 
 		if(Input.GetKeyDown(KeyCode.Space)){
-			restart();
+			if (restartBTN){
+				restart();
+			}
 		}
 
 	}
@@ -82,5 +86,6 @@ public class GameState : MonoBehaviour {
 		moveDivider.moveBackRestart = true;
 		leftGun.leftEnable = false;
 		rightGun.rightEnable = false;
+		restartBTN = false;
 	}
 }
