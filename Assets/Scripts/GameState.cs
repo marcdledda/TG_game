@@ -66,7 +66,6 @@ public class GameState : MonoBehaviour {
 				restart();
 			}
 		}
-
 	}
 
 	private void startTimer(){

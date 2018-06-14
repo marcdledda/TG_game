@@ -13,10 +13,12 @@ public class leftGun : MonoBehaviour {
 	[SerializeField]
 	private GameObject impactPrefab;
 	public static bool leftEnable;
+	private AudioSource gunSound;
 
 	// Use this for initialization
 	void Start () {
 		leftEnable = false;
+		gunSound = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -35,7 +37,7 @@ public class leftGun : MonoBehaviour {
 
 	void shoot(){
 		muzzleFlash.Play();
-
+		gunSound.Play();
 		RaycastHit hit;		
 		if (Physics.Raycast(transform.position, transform.forward, out hit)){
 			GameObject impactCreate = Instantiate(impactPrefab, hit.point, Quaternion.LookRotation(hit.normal));
