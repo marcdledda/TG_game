@@ -31,7 +31,9 @@ public class rightGun : MonoBehaviour {
 		// 	shoot();
 		// }
 		if (rightIndex && rightEnable){
-			shoot();
+			if (checkGrab.itemCollide != "uniPill"){
+				shoot();
+			}
 		}
 	}
 

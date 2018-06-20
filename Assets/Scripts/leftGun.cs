@@ -31,10 +31,12 @@ public class leftGun : MonoBehaviour {
 		// 	shoot();
 		// }
 		if (leftIndex && leftEnable){
-			shoot();
+			if (checkGrab.itemCollide != "uniPill"){
+				shoot();
+			}
 		}
 	}
-
+	
 	void shoot(){
 		muzzleFlash.Play();
 		gunSound.Play();
