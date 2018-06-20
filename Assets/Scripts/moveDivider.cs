@@ -87,10 +87,10 @@ public class moveDivider : MonoBehaviour {
 				wallInstruct.textShown = false;
 				GameState.uniStart = false;
 				GameState.dexStart = false;
-				GameState.dodgeScore = 15f;
+				// GameState.dodgeScore = 15f;
 				GameState.dodgeAmount = 15;
 				GameState.gunStart = false;
-				GameState.gunScore = 0;
+				// GameState.gunScore = 0;
 				GameState.dummyAmount = 15;
 				GameState.spawnLast = false;
 				GameState.restartBTN = true;
@@ -98,7 +98,9 @@ public class moveDivider : MonoBehaviour {
 		}
 
 		if (moveBackRestart){
-			wallText.text = "Eat the Pill" + "\r\nto Start the Test";
+			NetworkState.createName = true;
+			GameState.dodgeScore = 15f;
+			GameState.gunScore = 0;
 			moveBackRestart = false;
 		}
 	}
