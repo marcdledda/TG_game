@@ -12,6 +12,7 @@ public class moveDivider : MonoBehaviour {
 	public static bool move;
 	public static bool moveBack;
 	public static bool moveBackRestart;	
+	public static bool sameMoveBackRestart;
 
 	// Use this for initialization
 	void Start () {
@@ -102,6 +103,13 @@ public class moveDivider : MonoBehaviour {
 			GameState.dodgeScore = 15f;
 			GameState.gunScore = 0;
 			moveBackRestart = false;
+		}
+
+		if (sameMoveBackRestart){
+			wallText.text = "Welcome Subject " + NetworkState.playerName + "\r\nEat the Pill" + "\r\nto Start the Test";
+			GameState.dodgeScore = 15f;
+			GameState.gunScore = 0;
+			sameMoveBackRestart = false;
 		}
 	}
 }

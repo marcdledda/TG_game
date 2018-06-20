@@ -66,6 +66,11 @@ public class GameState : MonoBehaviour {
 				restart();
 			}
 		}
+		if(Input.GetKeyDown(KeyCode.Comma)){
+			if (restartBTN){
+				sameRestart();
+			}
+		}
 	}
 
 	private void startTimer(){
@@ -83,6 +88,14 @@ public class GameState : MonoBehaviour {
 		// SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		movePillar.moveBackRestart = true;
 		moveDivider.moveBackRestart = true;
+		leftGun.leftEnable = false;
+		rightGun.rightEnable = false;
+		restartBTN = false;
+	}
+
+	private void sameRestart(){
+		movePillar.moveBackRestart = true;
+		moveDivider.sameMoveBackRestart = true;
 		leftGun.leftEnable = false;
 		rightGun.rightEnable = false;
 		restartBTN = false;
