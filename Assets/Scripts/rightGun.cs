@@ -12,6 +12,8 @@ public class rightGun : MonoBehaviour {
 	private GameObject sparkPrefab;
 	[SerializeField]
 	private GameObject impactPrefab;
+	[SerializeField]
+	private LineRenderer laser;
 	public static bool rightEnable;
 	private AudioSource gunSound;
 
@@ -34,6 +36,11 @@ public class rightGun : MonoBehaviour {
 			if (checkGrab.itemCollide != "uniPill"){
 				shoot();
 			}
+		}
+		if (rightEnable){
+			laser.enabled = true;
+		} else {
+			laser.enabled = false;
 		}
 	}
 

@@ -12,6 +12,8 @@ public class leftGun : MonoBehaviour {
 	private GameObject sparkPrefab;
 	[SerializeField]
 	private GameObject impactPrefab;
+	[SerializeField]
+	private LineRenderer laser;
 	public static bool leftEnable;
 	private AudioSource gunSound;
 
@@ -35,8 +37,13 @@ public class leftGun : MonoBehaviour {
 				shoot();
 			}
 		}
+		if (leftEnable){
+			laser.enabled = true;
+		} else {
+			laser.enabled = false;
+		}
 	}
-	
+
 	void shoot(){
 		muzzleFlash.Play();
 		gunSound.Play();
