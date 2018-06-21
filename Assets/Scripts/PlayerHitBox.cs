@@ -43,6 +43,8 @@ public class PlayerHitBox : MonoBehaviour {
 			wallText.text = "Starting" + "\r\nDexterity & Reflex Test";
 			GameState.uniStart = true;
 			GameState.countStart = true;
+			leftGun.leftEnable = true;
+			rightGun.rightEnable = true;
 			movePillar.pillSpawn = false;
 		}
 	}

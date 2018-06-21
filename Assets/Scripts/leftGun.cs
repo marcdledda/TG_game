@@ -12,6 +12,8 @@ public class leftGun : MonoBehaviour {
 	private GameObject sparkPrefab;
 	[SerializeField]
 	private GameObject impactPrefab;
+	[SerializeField]
+	private LineRenderer laser;
 	public static bool leftEnable;
 	private AudioSource gunSound;
 
@@ -31,7 +33,14 @@ public class leftGun : MonoBehaviour {
 		// 	shoot();
 		// }
 		if (leftIndex && leftEnable){
-			shoot();
+			if (checkGrab.itemCollide != "uniPill"){
+				shoot();
+			}
+		}
+		if (leftEnable){
+			laser.enabled = true;
+		} else {
+			laser.enabled = false;
 		}
 	}
 
