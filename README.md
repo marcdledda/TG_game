@@ -14,7 +14,7 @@ Testing Grounds is a virtual application that aims to introduce the user to virt
 * A dexterity test that requires you to dodge incoming projectiles
 * A reflex test that tests both your reflex and accuracy
 * A composite test that will have you do both tests at the same time
-* Score are then listed [here](https://marcdledda.github.io/TG_web/)
+* Scores are then listed [here](https://marcdledda.github.io/TG_web/)
 
 ## Game Specifications
 * Unity3D
