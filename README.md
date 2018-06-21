@@ -11,10 +11,17 @@ Testing Grounds is a virtual application that aims to introduce the user to virt
 3. Run the **TestingGroundsVR** application, and enjoy!
 
 ## Features
-* A dexterity test that requires you to dodge incoming projectiles
-* A reflex test that tests both your reflex and accuracy
-* A composite test that will have you do both tests at the same time
-* Scores are then listed [here](https://marcdledda.github.io/TG_web/)
+
+### Dexterity Test
+A dexterity test that requires you to dodge incoming projectiles
+![Dexterity Test Example](https://github.com/marcdledda/TG_web/blob/master/src/components/images/dexTest.png)
+### Reflex Test
+A reflex test that evaluates both your reflex and accuracy
+![Reflex Test Example](https://github.com/marcdledda/TG_web/blob/master/src/components/images/refTest.png)
+### Composite Test
+A composite test that will have you do both tests at the same time
+![Composite Test Example](https://github.com/marcdledda/portfolio/blob/master/src/media/testingGrounds/tgBothTest.png)
+Scores are then listed [here](https://marcdledda.github.io/TG_web/)
 
 ## Game Specifications
 * Unity3D
