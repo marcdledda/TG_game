@@ -28,6 +28,7 @@ public class dummyMove : MonoBehaviour {
 		if (GameState.uniStart) {
 			if (GameState.dodgeAmount == 0 && GameState.dummyAmount == 0 && spawnLast){
 				moveDivider.moveBack = true;
+				NetworkState.postScore = true;
 			}
 		} else if (!GameState.uniStart){
 			if (GameState.dummyAmount == 0 && spawnLast){
